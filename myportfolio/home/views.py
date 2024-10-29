@@ -19,4 +19,4 @@ def portfolio_create(request):
     return render(request, 'portfolio_form.html', {'form': form})
 
 def index(request):
-   return render(request,'index.html')
+   return render(request,'home.html')
