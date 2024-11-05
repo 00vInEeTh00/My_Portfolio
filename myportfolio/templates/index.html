@@ -1,0 +1,182 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio_Vineeth</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+    <script>
+      window.onload = function() {
+          const background = document.querySelector('.background');
+          // Define the image path using Django's static tag
+          const imagePath = "{% static 'images/animated.gif' %}" + "?" + new Date().getTime();
+          // Set the background image
+          background.style.backgroundImage = "url('" + imagePath + "?" + new Date().getDate() + "')";
+          setTimeout(() => {
+              background.classList.add('hidden');
+              setTimeout(() => {
+                  background.remove();
+              }, 500); // Adjust delay if needed
+          }, 1000);
+      };
+    </script>
+</head>
+<body>
+  <div class="background"></div>
+  <div class="content">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light  custom-navbar navbar-custom {
+            width: 800px; /* Adjust width as needed */
+            margin: 0 auto; /* Center the navbar */" >
+            <a class="navbar-brand " href="#">Vineeth</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" ">
+              <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item active">
+                  <a class="nav-link" href="#project1">Project <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#Contact1">Contact <span class="sr-only">(current)</span></a>
+                </li>
+               
+              </ul> 
+            </div>
+            
+          </nav>
+    </header>
+    <main class="body">
+    <section class="main">
+        <div class="row p-4">
+          <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 d-flex justify-content-center align-items-center my-3 ">
+            <img  src="{% static 'images/this-2.png' %}" alt=""  class="img-fluid">
+          </div>
+          <div class="col-lg-6 col-sm-6 col-md-6 my-5 col-xs-6">
+            <h1 class="bio responsive-text">I'm <span style="color:#0055a5 ;">Vineeth</span> </h1>
+            <h2 class="bio responsive-text">Beginner <br> Developer</h2>
+            <p id="bio" class="para responsive-text">My job is to build your website so that it is functional <br>
+               and user-friendly but at the same time attractive.</p>
+            <button class="hire-me">Hire Me</button>
+          </div>
+        </div>
+    </section>
+    <section class="Projects my-5" id="project1">
+      <div>
+        <h1 id="project">Projects</h1>
+      </div>
+      <div class="row d-flex justify-content-center align-items-center mx-3 my-4" style="text-align:center;">
+          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
+              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Frontend design</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
+              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Frontend design</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
+              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Calculator</h5>
+                <p class="card-text">This Basic java Calculator project is allows users to perform basic arithmetic operations.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
+              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">E Commerce site</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    
+
+    <section class="my-5" id="Contact1">
+      <div class="my-5">
+        <h1 class="Contact pb-5">Contact</h1>
+      </div>
+      <div class="row my-3">
+
+          <div class="col-md-4 text-center my-auto ">
+            <img class="text-align-center" src="{% static 'images/footer.png' %}" alt=""> <br>
+          <div class="clearfix mt-1">
+            <h3 style="color: rgba(0, 0, 0, 0.76); font-weight: bold;">Email:</h3>
+            <h6 style="color: rgba(0, 0, 0, 0.658);">vineethm430@gmail.com</h6>
+          </div>
+          </div>
+
+          <div class="col-md-4 d-flex justify-content-center align-items-center my-5">
+            <div class="contact-form">
+              <h3 class="text-center" style="color: #050aa8; font-weight: bold;">Get in touch</h3>
+              <p class="text-center">Fill out the form below and I will get <br> back to you as soon as possible 😊</p>
+              <form  action="YOUR_SERVER_SCRIPT_URL" method="POST">
+                  
+                  <input class="form-class" placeholder="  Name"  type="text" id="name" name="name" required><br>
+                  
+                  
+                  <input class="form-class" placeholder="  Email" type="email" id="email" name="email" required><br>
+                  
+                
+                  <input class="form-class" placeholder="  Subject" type="text" id="subject" name="subject" required><br>
+                  
+                
+                  <textarea class="" placeholder="  Type your messages here..." id="message" name="message" rows="4" required></textarea><br>
+                  
+                  <button id="form-btn" type="submit"> Send Message </button>
+              </form>
+          </div>
+        </div>
+
+
+          <div class="col-md-4  text-center my-auto  pb-5" >
+            <div  style="margin-top: 1rem;">
+              <h3 class="" style="color: #050aa8; font-weight: bold;">Let's Connect</h3>
+            <a class="text-decoration-none" href="https://www.instagram.com/m_vine3th_?igsh=MW8wYzRINHVkZGjrNA==">
+              <img class="icons" src="{% static 'images/Pasted image.png' %}" alt="">
+            </a>
+              <a class="text-decoration-none" href="https://wa.me/918157815705">
+                <img class="icons" src="{% static 'images/Pasted image (4).png' %}" alt="">
+              </a>
+              <a class="text-decoration-none" href="">
+                <img class="icons" src="{% static 'images/Pasted image (3).png' %}" alt="">
+              </a>
+              <a class="text-decoration-none" href="">
+                <img class="icons" src="{% static 'images/Pasted image (5).png' %}" alt="">
+              </a>
+            </div>
+          </div>
+
+          
+        
+      </div>
+    </section>
+  </main>
+</div>
+    
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
