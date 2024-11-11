@@ -1,6 +1,7 @@
 {% load static %}
+{% load chunks %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,9 +26,10 @@
     </script>
 </head>
 <body>
+  <main class="body">
   <div class="background"></div>
   <div class="content">
-    <header>
+    <header style="position: fixed; width: 100%; z-index: 1;">
         <nav class="navbar navbar-expand-lg navbar-light  custom-navbar navbar-custom {
             width: 800px; /* Adjust width as needed */
             margin: 0 auto; /* Center the navbar */" >
@@ -40,7 +42,10 @@
               <ul class="navbar-nav ml-auto">
                 
                 <li class="nav-item active">
-                  <a class="nav-link" href="#project1">Project <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#project">Project <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
                   <a class="nav-link" href="#Contact1">Contact <span class="sr-only">(current)</span></a>
@@ -51,65 +56,56 @@
             
           </nav>
     </header>
-    <main class="body">
-    <section class="main">
-        <div class="row p-4">
+    
+    <section class="main" id="home">
+        <div class="row p-4 pt-5" style="padding-top:7rem !important;">
           <div class="col-lg-6 col-sm-6 col-md-6 col-xs-6 d-flex justify-content-center align-items-center my-3 ">
             <img  src="{% static 'images/this-2.png' %}" alt=""  class="img-fluid">
           </div>
-          <div class="col-lg-6 col-sm-6 col-md-6 my-5 col-xs-6">
+          <div class="col-lg-6 col-sm-6 col-md-6 my-5 col-xs-6 ">
             <h1 class="bio responsive-text">I'm <span style="color:#0055a5 ;">Vineeth</span> </h1>
             <h2 class="bio responsive-text">Beginner <br> Developer</h2>
-            <p id="bio" class="para responsive-text">My job is to build your website so that it is functional <br>
-               and user-friendly but at the same time attractive.</p>
-            <button class="hire-me">Hire Me</button>
-          </div>
-        </div>
-    </section>
-    <section class="Projects my-5" id="project1">
-      <div>
-        <h1 id="project">Projects</h1>
-      </div>
-      <div class="row d-flex justify-content-center align-items-center mx-3 my-4" style="text-align:center;">
-          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
-              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Frontend design</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
-              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Frontend design</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
-              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Calculator</h5>
-                <p class="card-text">This Basic java Calculator project is allows users to perform basic arithmetic operations.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
-              <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">E Commerce site</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              </div>
-            </div>
+            <p id="bio" class="para responsive-text mx-2">Emerging from the digital realm, my journey has just begun, but my commitment to mastering the craft and making a difference is unwavering.</p>
+            <button class="hire-me" onclick="location.href='mailto:vineethm430@gmail.com?subject=Hiring%20Inquiry%20for%20Your%20Services&body=Hello,%20I%20am%20interested%20in%20hiring%20you%20for%20your%20services.%20Could%20you%20please%20provide%20more%20information%20on%20your%20availability?'">Hire me</button>
+
+
+
           </div>
         </div>
     </section>
     
+    <section class="Projects my-5" id="project1">
+      <div>
+        <h1 id="project">Projects</h1>
+      </div>
+      
+      {% for project_chunks in projects|chunks:4 %}
+      <div class="row d-flex justify-content-center align-items-center mx-3 my-4" style="text-align:center;">
+           
+        {% for project in project_chunks %}
+          <div class="col-md-5 col-sm-6 col-lg-4 col-xl-3">
+
+            <a style="text-decoration: none; color: black;" href="{% url 'detail_project' project.id %}">
+              <div class="card mx-auto p-3 m-3 " style="border-radius: 15px;">
+                <img src="{% static 'images/Screenshot from 2024-10-30 20-57-24.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{project.title}}</h5>
+                  <p class="card-text">{{ project.short_description }}</p>
+                </div>
+              </div>
+            </a>
+
+          </div>
+          {% endfor %}
+
+          </div>
+          {% endfor %}
+          
+         
+     
+     
+    </section>
+
 
     <section class="my-5" id="Contact1">
       <div class="my-5">
@@ -129,7 +125,8 @@
             <div class="contact-form">
               <h3 class="text-center" style="color: #050aa8; font-weight: bold;">Get in touch</h3>
               <p class="text-center">Fill out the form below and I will get <br> back to you as soon as possible 😊</p>
-              <form  action="YOUR_SERVER_SCRIPT_URL" method="POST">
+              <form  action="" method="post" name="contact-form">
+                      
                   
                   <input class="form-class" placeholder="  Name"  type="text" id="name" name="name" required><br>
                   
@@ -157,10 +154,10 @@
               <a class="text-decoration-none" href="https://wa.me/918157815705">
                 <img class="icons" src="{% static 'images/Pasted image (4).png' %}" alt="">
               </a>
-              <a class="text-decoration-none" href="">
+              <a class="text-decoration-none" href="https://github.com/00vInEeTh00">
                 <img class="icons" src="{% static 'images/Pasted image (3).png' %}" alt="">
               </a>
-              <a class="text-decoration-none" href="">
+              <a class="text-decoration-none" href="https://www.linkedin.com/in/contactvineethm0481922ba">
                 <img class="icons" src="{% static 'images/Pasted image (5).png' %}" alt="">
               </a>
             </div>
@@ -173,7 +170,20 @@
   </main>
 </div>
     
+<script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzNg9tjAtl-Lld5SuL8I1a8-0Etg3sTeFfinyLpsc-7ic9UA1KBLygSBo54YDGX38R-/exec'
 
+    const form = document.forms['contact-form']
+
+    form.addEventListener('submit', e => {
+
+    e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thank you! your form is submitted successfully." ))
+    .then(() => { window.location.reload(); })
+      .catch(error => console.error('Error!', error.message))
+    })
+</script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

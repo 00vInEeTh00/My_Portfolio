@@ -1,0 +1,12 @@
+.gallery-item {
+    margin-bottom: 15px;
+}
+.gallery-item img, .gallery-item iframe {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+html,body{
+    height: 100%;
+    background-color: #d0dde9 ;
+}

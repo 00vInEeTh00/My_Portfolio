@@ -1,140 +1,142 @@
 .custom-navbar{
-    background-color: #d9e5f1;
-    
+  background-color: #d9e5f1;
+  
 }
 .navbar-custom {
-    height: 5rem;
+  height: 5rem;
 }
 .navbar-brand {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 3rem !important; /* Optional: Change font size */
-    font-weight: bold;
-    font-weight:bold; /* Make the font bold */
-    color: #0055a5 !important; /* Change this to your desired font color */
-    padding-left: 3rem;
-    font-stretch: expanded;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
-    letter-spacing: 2px; /* space between letters */ 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3rem !important; /* Optional: Change font size */
+  font-weight: bold;
+  font-weight:bold; /* Make the font bold */
+  color: #0055a5 !important; /* Change this to your desired font color */
+  padding-left: 3rem;
+  font-stretch: expanded;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px; /* space between letters */ 
 }
 .navbar-nav{
-    margin-right: 4rem;
+  margin-right: 4rem;
 }
 .nav-link {
-    color: #ffffff; /* Nav link text color */
-    margin-right: 60px; /* Right margin for spacing */
-    font-weight: bold;
-    font-size: 16px;
-    color: #554640 !important;
+  color: #ffffff; /* Nav link text color */
+  margin-right: 60px; /* Right margin for spacing */
+  font-weight: bold;
+  font-size: 16px;
+  color: #554640 !important;
 }
 .bio{
-    font-size:4em;
-    font-family: Arial, sans-serif !important; /* Change font */
-    font-weight: bold !important; /* Bold text */
-    color: #333 !important; /* Main text color */
-    margin-bottom: 0rem !important; /* Space below */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)!important ;
-  }
-  .hire-me{
-    width:9rem ;
-    height: 4rem;
-    background-color: #0055a5;
-    color: white;
-    font-weight: bold;
-    border-radius: 2rem;
-    border: #0055a5;
-    cursor: pointer;
-  }
-  .hire-me:hover {
-    background-color: rgb(230, 19, 104) !important ;  /* New color when hovering */
-  }
-  #bio-para{
-    color: black;
-    font-weight:bold !important;
-    padding-right: 5;
-  }
- 
-  #project{
-    text-align: center !important;
-    color: black;
-    font-weight: bold;
-  }
-  .card{
-    width: 20rem;
-
-  }
-  .card-text{
-    font-size: small !important;
-  }
-  .body{
-    background-color:#d0dde9 ;
-  }
-  .Contact{
-    text-align: center;
-    color: black;
-    font-weight: bold;
-  }
-  .skills{
-    text-align: center;
-    color: black;
-    font-weight: bold;
-  }
-  #connect{
-    color: #0055a5;
-    font-weight: bold !important;
-  }
-.icons{
-  width: 3rem;
-  height: 3rem;
+  font-size:4em;
+  font-family: Arial, sans-serif !important; /* Change font */
+  font-weight: bold !important; /* Bold text */
+  color: #333 !important; /* Main text color */
+  margin-bottom: 0rem !important; /* Space below */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)!important ;
 }
-#form-btn{
-  width:16rem;
-  height:2rem ;
+.hire-me{
+  width:9rem ;
+  height: 4rem;
   background-color: #0055a5;
   color: white;
   font-weight: bold;
-  border-radius: 1rem;
+  border-radius: 2rem;
   border: #0055a5;
   cursor: pointer;
-  margin-top: 1rem;
+}
+.hire-me:hover {
+  background-color: rgb(230, 19, 104) !important ;  /* New color when hovering */
+}
+#bio-para{
+  color: black;
+  font-weight:bold !important;
+  padding-right: 5;
+}
+
+#project{
+  text-align: center !important;
+  color: black;
+  font-weight: bold;
+}
+.card{
+  width: 20rem;
+  height: 350px;
+  overflow: hidden;
+
+}
+.card-text{
+  font-size: small !important;
+}
+.body{
+  background-color:#d0dde9 ;
+}
+.Contact{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+.skills{
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+#connect{
+  color: #0055a5;
+  font-weight: bold !important;
+}
+.icons{
+width: 3rem;
+height: 3rem;
+}
+#form-btn{
+width:16rem;
+height:2rem ;
+background-color: #0055a5;
+color: white;
+font-weight: bold;
+border-radius: 1rem;
+border: #0055a5;
+cursor: pointer;
+margin-top: 1rem;
 
 }
 .form-class{
-  border-radius: 1rem !important;
-  color: blue !important;
-  border-color: white !important;
-  margin-top: 1rem;
-  border: none;
-  width: 16rem;
-  height:2rem ;
+border-radius: 1rem !important;
+color: blue !important;
+border-color: white !important;
+margin-top: 1rem;
+border: none;
+width: 16rem;
+height:2rem ;
 }
 #message{
-  border-radius: 1rem !important;
-  border-color: white !important;
-  margin-top: 1rem;
-  width: 16rem;
+border-radius: 1rem !important;
+border-color: white !important;
+margin-top: 1rem;
+width: 16rem;
 }
 
 
 /* for bats fly */
 body,html{
-  height: 100%;
+height: 100%;
 }
 .background{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: 2;
-  transition: opacity 1s ease;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-size: cover;
+background-position: center;
+z-index: 2;
+transition: opacity 1s ease;
 }
 .hidden{
-  opacity: 0;
+opacity: 0;
 }
 .content{
-  z-index: 1;
+z-index: 1;
 }
 /* for bats fly end */
 
